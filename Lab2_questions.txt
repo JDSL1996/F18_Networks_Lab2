@@ -1,0 +1,11 @@
+Keefer Sands
+Joshua Stephenson-Losey
+
+Networks Lab 2
+
+1) IP Source: 192.168.1.102, Source TCP Port: 1161
+2) IP Destination: 128.119.245.12, Sending/receiving Source Port: 80
+
+3)IP Source: 10.200.48.49, Source TCP Port: 62069
+
+4)Starting Seq: 36
