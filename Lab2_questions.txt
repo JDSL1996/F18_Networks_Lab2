@@ -8,4 +8,6 @@ Networks Lab 2
 
 3)IP Source: 10.200.48.49, Source TCP Port: 62069
 
-4)Starting Seq: 36
+4)Starting relative Sequence number: 0 ??
+
+5)
