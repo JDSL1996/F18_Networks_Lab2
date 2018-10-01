@@ -34,4 +34,4 @@ Networks Lab 2
 
 13) We can see the slow start starting from 0-.02648 seconds where the cwnd is at 1 MSS.  It seems that the MSS caps at 6 and goes from 2 to 6 instead of 2-4-8 and onward.
 
-14) {{Confusion}}
+14) The slow start begins at Time zero and continues increasing sending speed throughout the transfer. the congestion avoidance is apparent in the window intervals which can be seen when no packets are being sent after a big burst of packets goes through for example t = 0.03s there are no packets sent after the initial one then at 0.05s three packets are sent and no packets are sent again until about 0.11s. This seems to fit the ideal model discussed in class because through each packet sending phase there are double the packets being sent.
