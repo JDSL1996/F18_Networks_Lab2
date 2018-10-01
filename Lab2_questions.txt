@@ -8,6 +8,24 @@ Networks Lab 2
 
 3)IP Source: 10.200.48.49, Source TCP Port: 62069
 
-4)Starting relative Sequence number: 0 ??
+4) Sequence Number: 0 , The Flags Segment identifies it as a SYN segment
 
-5)
+5) Sequence Number: 0 , {{Couldn't find a field called acknowledgement, could find acknowledgement number}} Acknowledgement Number: 1 , The Acknowledgement Number is relative to the sequence number of the GET request, The Flags Segment identifies it as a SYN ACK segment
+
+6) Sequence Number: 164041
+
+7) {{Very Confused D:}}
+
+8) {{Based on 7}}
+
+9) {{Can not find in packet}}
+
+10) No, You can check the sequence numbers and ack numbers to check for duplicates, you can also use tcp.analysis.retransmission in wireshark to find this too.
+
+11) {{Assumption based on 13 logic}} During the slow start it is acking after every request, but later its acking after every 6
+
+12) 164090/5.297257= 30,976.41 bytes/second.  This was calculated by checking the HTTP post command timestamps and the length of the TCP segments that were reassmbled
+
+13) We can see the slow start starting from 0-.02648 seconds where the cwnd is at 1 MSS.  It seems that the MSS caps at 6 and goes from 2 to 6 instead of 2-4-8 and onward.
+
+14) {{Confusion}}
