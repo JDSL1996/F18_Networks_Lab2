@@ -10,21 +10,27 @@ Networks Lab 2
 
 4) Sequence Number: 0 , The Flags Segment identifies it as a SYN segment
 
-5) Sequence Number: 0 , {{Couldn't find a field called acknowledgement, could find acknowledgement number}} Acknowledgement Number: 1 , The Acknowledgement Number is relative to the sequence number of the GET request, The Flags Segment identifies it as a SYN ACK segment
+5) Sequence Number: 0 , Acknowledgement Number: 1 and the field also equals one and is set, The Acknowledgement Number is relative to the sequence number of the GET request, The Flags Segment identifies it as a SYN ACK segment
 
 6) Sequence Number: 164041
 
-7) {{Very Confused D:}}
+7) The first six sequence numbers are: 
+	1 at 55.869ms ack received at 108.973ms RTT: 53.104ms,
+	607 at 56.100ms ack received at 109.246ms RTT: 53.146ms,
+	744 at 56.399ms ack received at 109.451ms RTT: 53.052ms,
+	2112 at 56.400ms ack received at 109.836ms RTT: 53.436ms,
+	3480 at 109.140ms ack received at 162.079ms RTT: 52.939ms, and 
+	4848 at 109.522ms ack received at 162.500ms RTT: 52.978ms.
 
-8) {{Based on 7}}
+8) The length of the first TCP packet including the post message (Sequence 1) is 672 bytes, the next message is 203 bytes, and the next four packets sent are all 1434 bytes while all the ack packets from the web page are 66 bytes.
 
-9) {{Can not find in packet}}
+9) The minimum capture length does not seem to be sated but the first packet received by the web page has an option called maximum segment size listed at 1380 bytes. This does not seem to effect the sender which continuously sends size 1434 byte packets.
 
 10) No, You can check the sequence numbers and ack numbers to check for duplicates, you can also use tcp.analysis.retransmission in wireshark to find this too.
 
 11) {{Assumption based on 13 logic}} During the slow start it is acking after every request, but later its acking after every 6
 
-12) 164090/5.297257= 30,976.41 bytes/second.  This was calculated by checking the HTTP post command timestamps and the length of the TCP segments that were reassmbled
+12) 164090/5.297257= 30,976.41 bytes/second.  This was calculated by checking the HTTP post command timestamps and the length of the TCP segments that were reassembled
 
 13) We can see the slow start starting from 0-.02648 seconds where the cwnd is at 1 MSS.  It seems that the MSS caps at 6 and goes from 2 to 6 instead of 2-4-8 and onward.
 
